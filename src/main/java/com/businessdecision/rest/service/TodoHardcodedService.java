@@ -31,6 +31,7 @@ public class TodoHardcodedService {
 		todos.add(new Todo(++idCounter, "Bernard", "Learn Python", new Date(), false));
 		todos.add(new Todo(++idCounter, "Bernard", "Build a Raspberry firewall", new Date(), false));
 		todos.add(new Todo(++idCounter, "Bernard", "Fix Up the Telescop", new Date(), false));
+		todos.add(new Todo(++idCounter, "Bernard", "Learning Microservices", new Date(), false));
 	}
 
 	/**
@@ -40,6 +41,19 @@ public class TodoHardcodedService {
 	 */
 	public List<Todo> findAll() {
 		return todos;
+	}
+	
+	public Todo save(final Todo todo) {
+		if (todo.getId() == -1) {
+			// We want to create
+			todo.setId(++idCounter);
+			todos.add(todo);
+		}else {
+			//this is an insertion
+			deleteById(todo.getId());
+			todos.add(todo);
+		}
+		return todo;
 	}
 
 	/**
