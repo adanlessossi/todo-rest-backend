@@ -61,12 +61,12 @@ public class TodosController {
 			@RequestBody Todo todo) {
 		Todo updatedTodo = this.todoService.save(todo);
 
-		return new ResponseEntity<Todo>(todo, HttpStatus.OK);
+		return new ResponseEntity<Todo>(updatedTodo, HttpStatus.OK);
 
 	}
 
 	@PostMapping("/users/{username}/todos")
-	public ResponseEntity<Todo> createTodo(@PathVariable String username, @PathVariable Long id,
+	public ResponseEntity<Todo> createTodo(@PathVariable String username,
 			@RequestBody Todo todo) {
 		Todo createdTodo = this.todoService.save(todo);
 
