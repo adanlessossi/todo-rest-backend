@@ -5,12 +5,19 @@ package com.businessdecision.rest.domain;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 /**
  * @author bernard.adanlessossi
  *
  */
+@Entity
 public class Todo {
 
+	@Id
+	@GeneratedValue
 	private Long id;
 	
 	private String username;
