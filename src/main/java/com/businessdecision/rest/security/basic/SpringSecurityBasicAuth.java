@@ -15,14 +15,16 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
  * @author bernard.adanlessossi
  *
  */
-@Configuration
-@EnableWebSecurity
-public class SpringSecurityBasicAuth extends WebSecurityConfigurerAdapter {
+//@Configuration
+//@EnableWebSecurity
+public class SpringSecurityBasicAuth {//extends WebSecurityConfigurerAdapter {
 
-	@Override
-	public void configure(HttpSecurity http) throws Exception {
-		http.csrf().disable().authorizeRequests().antMatchers(HttpMethod.OPTIONS, "/**").permitAll().anyRequest()
-				.authenticated().and()
-				.httpBasic();
-	}
+//	Adapted from
+//	{@ link WebSecurityConfigurerAdapter}
+
+//	@Override
+//	public void configure(HttpSecurity http) throws Exception {
+//		http.csrf().disable().authorizeRequests().antMatchers(HttpMethod.OPTIONS, "/**").permitAll().anyRequest()
+//				.authenticated().and().httpBasic();
+//	}
 }
